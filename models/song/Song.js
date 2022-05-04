@@ -10,7 +10,7 @@ const songSchema = new Schema({
     required: true,
   },
   year: {
-    type: Date,
+    type: Number,
   },
   lyrics: {
     type: String,
