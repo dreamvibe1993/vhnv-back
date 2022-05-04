@@ -22,5 +22,5 @@ mongoose
 
 // eslint-disable-next-line no-unused-vars
 const server = app.listen(port, () => {
-  console.log(`vhnv running on port: ${port}`);
+  console.log(`vhnv-backend running on port: ${port}`);
 });
