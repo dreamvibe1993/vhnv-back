@@ -20,9 +20,9 @@ const { TOO_MANY_REQUESTS } = require("./configs/errorMessages/errorMessages");
 
 const jsonParser = bodyParser.json();
 
-// ****
+// *****
 const app = express();
-// ****
+// *****
 
 const limiter = rateLimit({
   max: 600,
