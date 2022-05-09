@@ -55,3 +55,8 @@ app.use("*", (req, res, next) => res.sendFile(path.resolve(__dirname, "./client"
 app.use(globalErrorHandler);
 
 module.exports = app;
+
+/**
+ * TODO:
+ * Protect
+ */
