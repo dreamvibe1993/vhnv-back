@@ -1,4 +1,5 @@
 const express = require("express");
+const { protect } = require("../controllers/authController/authController");
 const {
   getAllSongs,
   postSong,
@@ -8,7 +9,7 @@ const {
 
 const router = express.Router();
 
-router.route("/").get(getAllSongs).post(postSong);
+router.route("/").get(getAllSongs).post(protect, postSong);
 
 router.route("/:id").delete(deleteSong);
 

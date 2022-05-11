@@ -5,7 +5,6 @@ const { catchAsync } = require("../../utils/Errors/catchAsync/catchAsync");
 
 const { STATUS_SUCCESS } = require("../../configs/statuses/statuses");
 const { NO_SONGS_ERR_MESSAGE, NO_SONGS_STARTS_WITH_LETTER } = require("../../configs/errorMessages/errorMessages");
-const { findById } = require("../../models/song/Song");
 
 exports.getAllSongs = catchAsync(async (req, res, next) => {
   const songs = await Song.find();

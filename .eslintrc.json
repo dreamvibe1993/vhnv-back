@@ -7,9 +7,8 @@
     "ecmaVersion": 8
   },
   "extends": "eslint:recommended",
-  "plugins": ["prettier"],
+  "plugins": [],
   "rules": {
-    "prettier/prettier": [],
     "spaced-comment": "off",
     "no-console": "warn",
     "consistent-return": "off",
