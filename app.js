@@ -34,7 +34,7 @@ const limiter = rateLimit({
   message: TOO_MANY_REQUESTS,
 });
 
-app.use(helmet());
+app.use(helmet({ crossOriginEmbedderPolicy: false }));
 app.use("/api", limiter);
 app.use(cookieParser());
 app.use(express.json({ limit: "10kb" }));
