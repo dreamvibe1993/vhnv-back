@@ -48,6 +48,15 @@ app.use(compression());
 if (process.env.NODE_ENV === "development") app.use(morgan("dev"));
 
 app.use((req, res, next) => {
+ // User.collection.dropIndexes((err, res) => { IN CASE OF MONGO E11000 ON NON-UNIQUE FIELD OR ANOTHER WEIRDNESS.
+  //   if (err) console.log(err);
+  //   if (res) console.log(res);
+  // });
+  res.setHeader('Cross-Origin-Resource-Policy', false);
+  res.setHeader(
+    'Content-Security-Policy',
+    "default-src * data: 'unsafe-eval' 'unsafe-inline' blob:; worker-src blob:; script-src * blob:;"
+  );
   next();
 });
 
