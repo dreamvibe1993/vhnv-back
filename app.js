@@ -15,6 +15,8 @@ const globalErrorHandler = require("./controllers/errorController/errorControlle
 
 const songRouter = require("./routes/songsRouter");
 const authRouter = require("./routes/authRouter");
+const photoRouter = require("./routes/photoRouter");
+const blogRouter = require("./routes/blogRouter");
 
 const { corsDevConfig } = require("./configs/cors/cors");
 
@@ -40,7 +42,7 @@ app.use(mongoSanitize());
 app.use(xss());
 app.use(hpp(/* whitelist: [] */));
 app.use(cors(process.env.NODE_ENV === "development" ? corsDevConfig : {}));
-app.options('*', cors());
+app.options("*", cors());
 app.use(compression());
 
 if (process.env.NODE_ENV === "development") app.use(morgan("dev"));
@@ -51,6 +53,8 @@ app.use((req, res, next) => {
 
 app.use(`${process.env.API_ROUTE_V1}/songs`, jsonParser, songRouter);
 app.use(`${process.env.API_ROUTE_V1}/auth`, jsonParser, authRouter);
+app.use(`${process.env.API_ROUTE_V1}/photos`, jsonParser, photoRouter);
+app.use(`${process.env.API_ROUTE_V1}/blog`, jsonParser, blogRouter);
 
 app.use("/", cors(), express.static(path.resolve(__dirname, `./client`)));
 

@@ -11,7 +11,7 @@ const router = express.Router();
 
 router.route("/").get(getAllSongs).post(protect, postSong);
 
-router.route("/:id").delete(deleteSong);
+router.route("/:id").delete(protect, deleteSong);
 
 router.route("/:letter").get(getSongAlpabetically);
 
