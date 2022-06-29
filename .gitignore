@@ -1,3 +1,4 @@
+client
 config.env
 *.env
 node_modules
